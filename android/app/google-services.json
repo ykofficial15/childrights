@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "897280082847",
+    "project_id": "childrights-a8a67",
+    "storage_bucket": "childrights-a8a67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897280082847:android:9ea483f83483172146f3aa",
+        "android_client_info": {
+          "package_name": "com.example.childrights"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACEEDMeW4udxl1SLSqaVTC6OeEAd42hFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
