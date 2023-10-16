@@ -93,6 +93,7 @@ class Home extends StatelessWidget {
                       height: 130.0,
                       child: AllZones(),
                     ),
+                  
                   ],
                 ),
               ),
