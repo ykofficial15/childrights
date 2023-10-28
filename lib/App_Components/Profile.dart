@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:childrights/Login_Signup/Login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore
 import '../Provider_Models/Users.dart';
 
 class UserScreen extends StatefulWidget {
@@ -11,6 +12,26 @@ class UserScreen extends StatefulWidget {
 
 class _UserScreenState extends State<UserScreen> {
   final User? user = FirebaseAuth.instance.currentUser;
+  String userName = "User Name"; // Initialize with a default value
+
+  @override
+  void initState() {
+    super.initState();
+    if (user != null) {
+      // Fetch the user's name from Firestore
+      FirebaseFirestore.instance
+          .collection("Children_Signup")
+          .doc(user!.uid)
+          .get()
+          .then((doc) {
+        if (doc.exists) {
+          setState(() {
+            userName = doc.data()?["Name"] ?? "User Name";
+          });
+        }
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +93,7 @@ class _UserScreenState extends State<UserScreen> {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    user?.email ?? 'User Email', // Display user email
+                    userName, // Display the user's name
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
