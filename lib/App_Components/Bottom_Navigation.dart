@@ -1,3 +1,4 @@
+import 'package:childrights/App_Components/Profile.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'Home.dart';
@@ -49,7 +50,7 @@ buttonBackgroundColor: Colors.purple,
       );
     } else {
       return Center(
-        child: Home(),
+        child: UserScreen(),
       );
     }
   }

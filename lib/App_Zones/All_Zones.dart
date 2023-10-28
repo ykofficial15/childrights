@@ -1,5 +1,7 @@
+import 'package:childrights/App_Components/Quote.dart';
 import 'package:childrights/App_Zones/Comics.dart';
 import 'package:childrights/App_Zones/Games/TicTacToe.dart';
+import 'package:childrights/App_Zones/Q&A.dart';
 import 'package:flutter/material.dart';
 
 
@@ -22,7 +24,7 @@ class _AllZonesState extends State<AllZones> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => TicTacToeScreen(),
+                builder: (context) =>TicTacToeScreen(),
               ),
             );
           },
@@ -92,7 +94,15 @@ class _AllZonesState extends State<AllZones> {
         ),
         //box 4 started from here created by yogesh
         InkWell(
-          onTap: () {},
+          onTap: () {
+
+               Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>MCQScreen(),
+              ),
+            );
+          },
           child: Container(
               alignment: Alignment.center,
               margin: EdgeInsets.all(3),

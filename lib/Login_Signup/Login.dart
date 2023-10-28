@@ -1,8 +1,11 @@
 import 'package:childrights/Login_Signup/ForgetPassword.dart';
+import 'package:childrights/Login_Signup/SignUp.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 import '../App_Components/Bottom_Navigation.dart';
+import '../Provider_Models/Users.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -35,6 +38,8 @@ class _LoginState extends State<Login> {
           backgroundColor: Colors.green,
           textColor: Colors.white,
         );
+                final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      authProvider.login();
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => BottomNavigation()));
       } on FirebaseAuthException catch (e) {
@@ -89,6 +94,8 @@ class _LoginState extends State<Login> {
           backgroundColor: Colors.green,
           textColor: Colors.white,
         );
+        final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      authProvider.login();
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => BottomNavigation()));
       } on FirebaseAuthException catch (e) {
@@ -133,6 +140,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    //  final authProvider = Provider.of<AuthProvider>(context, listen: false); 
     return Scaffold(
         body: SingleChildScrollView(
       child: Container(
@@ -309,7 +317,10 @@ class _LoginState extends State<Login> {
                                     style: TextStyle(color: Colors.black),
                                   ),
                                   GestureDetector(
-                                    onTap: () {},
+                                    onTap: () {
+
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Signup(),));
+                                    },
                                     child: Text(
                                       'Register Now',
                                       style: TextStyle(
@@ -347,6 +358,7 @@ class _LoginState extends State<Login> {
                           height: 88.0,
                         ),
 //-------------------------------------------------------------------------------------------------------- Form 1 Login Button
+                    
                         Container(
                           margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
                           width: double.infinity,

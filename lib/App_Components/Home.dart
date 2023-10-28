@@ -2,17 +2,18 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../App_Zones/All_Zones.dart';
 import 'My_Slideshow.dart';
+import 'Quote.dart';
 import 'Search_Box.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
+    return Scaffold( 
+      body: SingleChildScrollView(  
         physics: AlwaysScrollableScrollPhysics(),
         child: Container(
-          height: MediaQuery.of(context).size.height,
+          // height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -23,7 +24,7 @@ class Home extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 35,
+                height: 30,
               ),
               Container(
                 child: Column(
@@ -93,7 +94,19 @@ class Home extends StatelessWidget {
                       height: 130.0,
                       child: AllZones(),
                     ),
-                  
+                   Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                    alignment: Alignment.centerLeft,
+child:Text('Quote of the day?',style:TextStyle(color:Colors.purple,fontSize: 25,fontWeight: FontWeight.bold))
+                   ),
+                  Container(
+                    decoration: BoxDecoration(
+                     image: DecorationImage(image: AssetImage('images/quoteboard.jpg'),fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    margin: EdgeInsets.all(5),
+                    child:Quote(),
+                  ),
                   ],
                 ),
               ),

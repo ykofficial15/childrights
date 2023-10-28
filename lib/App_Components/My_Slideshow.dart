@@ -8,15 +8,19 @@ class MySlideshow extends StatefulWidget {
 
 class _MySlideshowState extends State<MySlideshow> {
   final List<String> imageNames = [
-    'm1.png',
     'm2.png',
     'm3.png',
+    'm1.png',
+    'm4.jpg',
+    'm5.jpg',
   ];
 
   final List<String> captions = [
-    'Game Zone',
     'Child Rights',
     'Story Books',
+     'Game Zone',
+    'Quote Day',
+    'Campaign',
   ];
 
   int _currentIndex = 0;
