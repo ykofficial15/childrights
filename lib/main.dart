@@ -10,9 +10,6 @@ import 'Provider_Models/CounterModel.dart';
 import 'Login_Signup/SignUp.dart';
 import 'Provider_Models/Users.dart';
 
-
-
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

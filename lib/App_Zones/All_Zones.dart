@@ -1,8 +1,10 @@
 import 'package:childrights/App_Components/Quote.dart';
 import 'package:childrights/App_Zones/Comics.dart';
+import 'package:childrights/App_Zones/Ebooks.dart';
 import 'package:childrights/App_Zones/Games/TicTacToe.dart';
 import 'package:childrights/App_Zones/Q&A.dart';
 import 'package:flutter/material.dart';
+import 'Games/Image_Quiz.dart';
 
 
 class AllZones extends StatefulWidget {
@@ -48,12 +50,12 @@ class _AllZonesState extends State<AllZones> {
         //box 2 started from here created by yogesh
         InkWell(
           onTap: () {
-            //                     Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => MyHomePage(),
-            //   ),
-            // );
+                                Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Anime(),
+              ),
+            );
           },
           child: Container(
               alignment: Alignment.center,
