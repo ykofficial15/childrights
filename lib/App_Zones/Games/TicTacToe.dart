@@ -248,7 +248,7 @@ class _TicTacToeScreenState extends State<TicTacToeScreen> {
         // decoration: BoxDecoration(
         //     image: DecorationImage(
         //         image: AssetImage(
-        //           'images/board.jpg',
+        //           'assets/board.jpg',
         //         ),
         //         fit: BoxFit.cover)),
         child: Column(

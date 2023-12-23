@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AuthProvider extends ChangeNotifier {
+class Authenticate extends ChangeNotifier {
   bool _isLoggedIn;
 
-  AuthProvider(this._isLoggedIn);
+  Authenticate(this._isLoggedIn);
 
   bool get isLoggedIn => _isLoggedIn;
 

@@ -1,4 +1,6 @@
+import 'package:childrights/App_Components/Music.dart';
 import 'package:childrights/App_Components/Quote.dart';
+import 'package:childrights/App_Zones/Chatbot/chat_screen.dart';
 import 'package:childrights/App_Zones/Comics.dart';
 import 'package:childrights/App_Zones/Ebooks.dart';
 import 'package:childrights/App_Zones/Games/TicTacToe.dart';
@@ -38,7 +40,7 @@ class _AllZonesState extends State<AllZones> {
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   image: DecorationImage(
                       image: AssetImage(
-                        'images/z1.png',
+                        'assets/z1.png',
                       ),
                       fit: BoxFit.cover)),
               child: Text(
@@ -53,7 +55,7 @@ class _AllZonesState extends State<AllZones> {
                                 Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Anime(),
+                builder: (context) => ChatScreen(),
               ),
             );
           },
@@ -65,7 +67,7 @@ class _AllZonesState extends State<AllZones> {
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   image: DecorationImage(
                       image: AssetImage(
-                        'images/z2.png',
+                        'assets/z2.png',
                       ),
                       fit: BoxFit.cover)),
               child: Text(
@@ -85,7 +87,7 @@ class _AllZonesState extends State<AllZones> {
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   image: DecorationImage(
                       image: AssetImage(
-                        'images/z3.png',
+                        'assets/z3.png',
                       ),
                       fit: BoxFit.cover)),
               child: Text(
@@ -113,7 +115,7 @@ class _AllZonesState extends State<AllZones> {
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   image: DecorationImage(
                       image: AssetImage(
-                        'images/z4.png',
+                        'assets/z4.png',
                       ),
                       fit: BoxFit.cover)),
               child: Text(

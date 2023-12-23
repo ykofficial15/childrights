@@ -73,7 +73,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
            height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration:BoxDecoration(
-         image: DecorationImage(image: AssetImage('images/bg.png',),fit: BoxFit.cover)
+         image: DecorationImage(image: AssetImage('assets/bg.png',),fit: BoxFit.cover)
         ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -81,7 +81,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             children: [
                Container(
         width: MediaQuery.of(context).size.width,
-          child: Image.asset('images/splash.png',height: 150,width: 150,alignment: Alignment.centerLeft),
+          child: Image.asset('assets/splash.png',height: 150,width: 150,alignment: Alignment.centerLeft),
        ),
               SizedBox(height: 150),
               Container(

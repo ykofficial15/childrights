@@ -38,8 +38,8 @@ class _LoginState extends State<Login> {
           backgroundColor: Colors.green,
           textColor: Colors.white,
         );
-                final authProvider = Provider.of<AuthProvider>(context, listen: false);
-      authProvider.login();
+        final authProvider = Provider.of<Authenticate>(context, listen: false);
+        authProvider.login();
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => BottomNavigation()));
       } on FirebaseAuthException catch (e) {
@@ -94,8 +94,8 @@ class _LoginState extends State<Login> {
           backgroundColor: Colors.green,
           textColor: Colors.white,
         );
-        final authProvider = Provider.of<AuthProvider>(context, listen: false);
-      authProvider.login();
+        final authProvider = Provider.of<Authenticate>(context, listen: false);
+        authProvider.login();
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => BottomNavigation()));
       } on FirebaseAuthException catch (e) {
@@ -140,7 +140,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    //  final authProvider = Provider.of<AuthProvider>(context, listen: false); 
+    //  final authProvider = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
         body: SingleChildScrollView(
       child: Container(
@@ -149,7 +149,7 @@ class _LoginState extends State<Login> {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  'images/bg.png',
+                  'assets/bg.png',
                 ),
                 fit: BoxFit.cover)),
         child: Column(
@@ -157,7 +157,7 @@ class _LoginState extends State<Login> {
 //--------------------------------------------------------------------------------------------------------------------------Logo Heading
             Container(
               width: MediaQuery.of(context).size.width,
-              child: Image.asset('images/splash.png',
+              child: Image.asset('assets/splash.png',
                   height: 150, width: 150, alignment: Alignment.centerLeft),
             ),
             //--------------------------------------------------------------------------------------------------------------------------Radio Buttons
@@ -318,8 +318,11 @@ class _LoginState extends State<Login> {
                                   ),
                                   GestureDetector(
                                     onTap: () {
-
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Signup(),));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Signup(),
+                                          ));
                                     },
                                     child: Text(
                                       'Register Now',
@@ -358,7 +361,7 @@ class _LoginState extends State<Login> {
                           height: 88.0,
                         ),
 //-------------------------------------------------------------------------------------------------------- Form 1 Login Button
-                    
+
                         Container(
                           margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
                           width: double.infinity,

@@ -10,15 +10,21 @@ import 'Provider_Models/CounterModel.dart';
 import 'Login_Signup/SignUp.dart';
 import 'Provider_Models/Users.dart';
 
-void main() async {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(
+  await Firebase.initializeApp( options: FirebaseOptions(
+      apiKey: 'AIzaSyAYLnn-nnUac5Qy3firV26wpm6VI5mgxo0',
+      appId: '1:72560227782:android:80a81d24f10b0163642ec7',
+      messagingSenderId: 'YOUR_SENDER_ID',
+      projectId: 'childrights-b7262',
+    ),);
+
+runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider<CounterModel>(create: (context) => CounterModel()),
-        ChangeNotifierProvider<AuthProvider>(
-          create: (context) => AuthProvider(false), // Pass initial value for _isLoggedIn
+        ChangeNotifierProvider<Authenticate>(
+          create: (context) => Authenticate(false), //Pass initial value for _isLoggedIn
         ),
       ],
       child: MaterialApp(
@@ -41,10 +47,10 @@ class MyApp extends StatelessWidget {
             final isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
 
             return ChangeNotifierProvider(
-              create: (context) => AuthProvider(isLoggedIn), // Provide the initial login status
+              create: (context) => Authenticate(isLoggedIn), // Provide the initial login status
               child: AnimatedSplashScreen(
                 duration: 3000,
-                splash: Image.asset('images/splash.png'),
+                splash: Image.asset('assets/splash.png'),
                 splashIconSize: 300,
                 nextScreen: isLoggedIn ? BottomNavigation() : Login(),
                 backgroundColor: Colors.purple,

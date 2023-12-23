@@ -69,7 +69,7 @@ class _MySlideshowState extends State<MySlideshow> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20.0),
                     child: Image.asset(
-                      'images/${imageNames[index]}',
+                      'assets/${imageNames[index]}',
                       fit: BoxFit.cover,
                     ),
                   ),

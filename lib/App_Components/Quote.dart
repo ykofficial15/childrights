@@ -14,7 +14,7 @@ class _QuoteState extends State<Quote> {
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return Center( 
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(color:Colors.purple),
           );
         }
 

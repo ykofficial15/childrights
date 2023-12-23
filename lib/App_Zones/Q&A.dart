@@ -47,7 +47,7 @@ class _MCQScreenState extends State<MCQScreen> {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('images/bg.png'), fit: BoxFit.cover),
+                      image: AssetImage('assets/bg.png'), fit: BoxFit.cover),
                   color: Colors.white,
                 ),
                 child: Column(
@@ -60,7 +60,7 @@ class _MCQScreenState extends State<MCQScreen> {
                         children: [
                           Expanded(
                             child: Image.asset(
-                              'images/splash.png',
+                              'assets/splash.png',
                               height: 150,
                               width: 150,
                               alignment: Alignment.topLeft,
@@ -188,7 +188,7 @@ class _MCQScreenState extends State<MCQScreen> {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('images/bg.png'),
+                    image: AssetImage('assets/bg.png'),
                     fit: BoxFit.cover,
                   ),
                   color: Colors.white,
@@ -208,7 +208,7 @@ class _MCQScreenState extends State<MCQScreen> {
                         children: [
                           Expanded(
                             child: Image.asset(
-                              'images/splash.png',
+                              'assets/splash.png',
                               height: 150,
                               width: 150,
                               alignment: Alignment.topLeft,

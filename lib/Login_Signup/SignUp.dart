@@ -4,21 +4,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Signup(),
-    );
-  }
-}
-
 class Signup extends StatefulWidget {
   @override
   State<Signup> createState() => _SignupState();
@@ -63,29 +48,43 @@ class _SignupState extends State<Signup> {
       });
 
         form.reset();
-      } on FirebaseAuthException catch (e) {
-        if (e.code == 'weak-password') {
-          showErrorMessage("Too weak password");
-        } else if (e.code == 'email-already-in-use') {
-          showErrorMessage("Email already exists");
-        }
-      } catch (e) {
-        showErrorMessage("Error in saving data");
+      }  on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+  Fluttertoast.showToast( 
+        msg: "Too weak password",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        backgroundColor: Colors.blue,
+        timeInSecForIosWeb: 1,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+      } else if (e.code == 'email-already-in-use') {
+        Fluttertoast.showToast(
+        msg: "Email already exists",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        backgroundColor: Colors.blue,
+        timeInSecForIosWeb: 1,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
       }
+    } catch (e) {
+     Fluttertoast.showToast(
+        msg: "Error in saving data",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        backgroundColor: Colors.red,
+        timeInSecForIosWeb: 1,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
     }
   }
+}
 
-  void showErrorMessage(String message) {
-    Fluttertoast.showToast(
-      msg: message,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
-      backgroundColor: Colors.red,
-      timeInSecForIosWeb: 1,
-      textColor: Colors.black,
-      fontSize: 16.0,
-    );
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +96,7 @@ class _SignupState extends State<Signup> {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/bg.png'),
+              image: AssetImage('assets/bg.png'),
               fit: BoxFit.cover,
             ),
           ),
@@ -107,7 +106,7 @@ class _SignupState extends State<Signup> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 child: Image.asset(
-                  'images/splash.png',
+                  'assets/splash.png',
                   height: 150,
                   width: 150,
                   alignment: Alignment.centerLeft,

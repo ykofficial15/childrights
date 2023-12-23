@@ -1,3 +1,5 @@
+import 'package:childrights/App_Zones/Chatbot/chat_screen.dart';
+import 'package:childrights/App_Zones/Ebooks.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -41,7 +43,7 @@ class _UserScreenState extends State<UserScreen> {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/bg.png'),
+            image: AssetImage('assets/bg.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -53,7 +55,7 @@ class _UserScreenState extends State<UserScreen> {
                 children: [
                   Expanded(
                     child: Image.asset(
-                      'images/splash.png',
+                      'assets/splash.png',
                       height: 150,
                       width: 150,
                       alignment: Alignment.topLeft,
@@ -65,8 +67,7 @@ class _UserScreenState extends State<UserScreen> {
                       icon: Icon(Icons.logout_rounded, color: Colors.white),
                       tooltip: 'LogOut',
                       onPressed: () {
-                        // Add this section to log the user out and require login again
-                        final authProvider = Provider.of<AuthProvider>(context, listen: false);
+                        final authProvider =Provider.of<Authenticate>(context, listen: false);
                         authProvider.logout();
 
                         // Navigate to the login page
@@ -89,7 +90,7 @@ class _UserScreenState extends State<UserScreen> {
                   CircleAvatar(
                     backgroundColor: Color.fromARGB(255, 255, 123, 0),
                     radius: 60,
-                    backgroundImage: AssetImage('images/boy.png'),
+                    backgroundImage: AssetImage('assets/boy.png'),
                   ),
                   SizedBox(height: 10),
                   Text(
@@ -104,6 +105,11 @@ class _UserScreenState extends State<UserScreen> {
                 ],
               ),
             ),
+            Center(
+              child:Container(
+                height: 350,
+                child: ChatScreen())
+            )
           ],
         ),
       ),

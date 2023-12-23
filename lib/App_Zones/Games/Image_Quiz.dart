@@ -112,7 +112,7 @@ class _QuizScreenState extends State<QuizScreen> {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'images/bg.png',
+                'assets/bg.png',
               ),
               fit: BoxFit.cover,
             ),
@@ -123,7 +123,7 @@ class _QuizScreenState extends State<QuizScreen> {
               //---------------------------------------------------------------------------------logo
               Container(
                 width: MediaQuery.of(context).size.width,
-                child: Image.asset('images/splash.png',
+                child: Image.asset('assets/splash.png',
                     height: 150, width: 150, alignment: Alignment.centerLeft),
               ),
               //-----------------------------------------------------------------------------thoda sa spacing swaad anusaar
